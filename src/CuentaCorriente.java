@@ -11,27 +11,4 @@ public class CuentaCorriente extends CuentaBancaria{
         this.tiposRetiro = new ArrayList<>();
         this.tiposDeposito = new ArrayList<>();
     }
-
-    @Override
-    public void depositar(double monto, String tipoDeposito) {
-        if (monto > 0){
-            setSaldo(getSaldo() + monto);
-            tiposDeposito.add(tipoDeposito);
-            System.out.println("Depósito exitoso de $"+ monto +  " en tu cuenta corriente mediante "
-                                +tipoDeposito +". Saldo actual: $" + getSaldo());
-        } else {
-            System.out.println("El monto a depositar debe ser positivo");
-        }
-    }
-
-    @Override
-    public void retirar(double montoARetirar, String tipoRetiro) {
-        if(montoARetirar > 0 && montoARetirar <= getSaldo()){
-            setSaldo(getSaldo()-montoARetirar);
-            tiposRetiro.add(tipoRetiro);
-            System.out.println("Hiciste un retiro de $"+ montoARetirar + " de tu cuenta corriente mediante "+tipoRetiro+". Saldo restante: $" + getSaldo());
-        } else {
-            System.out.println("Fondos insuficientes. El monto a retirar debe ser menor o igual al saldo de su cuenta");
-        }
-    }
 }

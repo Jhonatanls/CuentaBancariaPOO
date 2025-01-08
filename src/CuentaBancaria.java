@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 
-abstract class CuentaBancaria implements Transaccion{
+abstract class CuentaBancaria{
 
     private String numeroCuenta;
     private String titular;
     private double saldo;
+    private int contadorTransacciones;
 
     public CuentaBancaria(String titular, String numeroCuenta, double saldo) {
         this.titular = titular;
