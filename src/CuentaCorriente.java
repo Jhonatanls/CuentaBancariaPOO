@@ -28,6 +28,7 @@ public class CuentaCorriente extends CuentaBancaria{
     public void retirar(double montoARetirar, String tipoRetiro) {
         if(montoARetirar > 0 && montoARetirar <= getSaldo()){
             setSaldo(getSaldo()-montoARetirar);
+            tiposRetiro.add(tipoRetiro);
             System.out.println("Hiciste un retiro de $"+ montoARetirar + " de tu cuenta corriente mediante "+tipoRetiro+". Saldo restante: $" + getSaldo());
         } else {
             System.out.println("Fondos insuficientes. El monto a retirar debe ser menor o igual al saldo de su cuenta");
